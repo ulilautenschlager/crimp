@@ -10,12 +10,14 @@ same number of clusters (K) and clustered objects (C).
 ## Installation
 Download Crimp, e.g. using `git clone https://github.com/ulilautenschlager/crimp`
 
-- Linux: From directory "crimp/", run `make` to compile Crimp.
-- Windows: Not yet supported. (However, binaries compiled using MinGW seem to work.)
+- Linux: Either use the precompiled crimp (64 Bit, statically linked 
+against [musl](https://musl.libc.org/)) or compile your own binary with `make` (recommended).
+- Windows (64 bit): Please use the precompiled crimp.exe.
 
 ## Usage
-Since Crimp is a command-line tool, you usually need to open a Linux terminal. 
-In the following, some familiarity with running command-line tools will be assumed.
+Since Crimp is a command-line tool, you usually need to open a Linux terminal or
+a Windows command-line interpreter like cmd.exe or PowerShell. In the following,
+familiarity with running command-line tools will be assumed.
 
 Crimp expects one mandatory argument, which is the input file containing 
 multiple clusterings (Q-matrices), e.g. `./crimp example.txt`. Additional
@@ -24,9 +26,11 @@ options (e.g., `-n 20`) may be placed before the input file. Use `./crimp -h` or
 options.
 
 
-### Input format
+### Input formats
 
-Crimp expects a single input file comprising multiple 
+#### Default
+
+By default, Crimp expects a single input file comprising multiple 
 whitespace-delimited Q-matrices, separated by one or more empty lines, e.g.
 
 ```raw
@@ -64,11 +68,46 @@ or like CLUMMP-indfiles:
 3 3 (0) 1 :  1  0
 ```
 
-If present in the input, such information will be ignored and not be part of
-Crimp's output.
+If present in the input, such information will also be appended to the output 
+files.
 
 Note: The clustered objects (rows) have to be identically ordered for all 
-Q-matrices!
+Q-matrices! Therefore, Crimp will check additional information as above for 
+consistency and raise an error in case of conflicts.
+
+#### `-p`/`-P`
+
+To be compatible with CLUMPP-popfiles and similar formats, Crimp provides
+the options `-p` and `-P`. If one of them is used, the rightmost column will 
+viewed as population sizes and either be ignored (`-p`) or used as (relative) 
+weight for each row's impact on the objective functions (`-P`).
+
+Like additional information on the left side, the last column will be checked 
+for consistency and appended to Crimp's output files.
+
+Example input comprising population sizes (25, 10 and 60):
+
+```raw
+1  0  25
+1  0  10
+0  1  60
+
+0  1  25
+0  1  10
+1  0  60
+```
+
+or more complex:
+
+```raw
+1 1 (0) 1 :  1  0  25
+2 2 (0) 1 :  1  0  10
+3 3 (0) 1 :  0  1  60
+
+1 1 (0) 1 :  0  1  25
+2 2 (0) 1 :  0  1  10
+3 3 (0) 1 :  1  0  60
+```
 
 ### Output files
 
@@ -99,6 +138,11 @@ rearranges the original Q-matrices and writes them to \<input\>.ordered.
                     the initial and final solution.
 
   -h                Print help message and exit.
+                    
+  -p                Treat input as popfile and ignore last column (population sizes).
+
+  -P                Treat input as popfile and use population sizes as weights.
+                    (incompatible with option -w)
 
   -q                Quiet mode 1:
                     Only print final score of each optimization run.
@@ -121,3 +165,8 @@ rearranges the original Q-matrices and writes them to \<input\>.ordered.
                     This is only possible for very small problem sizes!
 
 ```
+
+## License
+
+Unless otherwise stated, the provided files are distributed under the MIT license (see LICENSE.txt).
+The alternative getopt implementation (src/getopt.c and src/getopt.h), which allows to compile Crimp on non-Unix systems and is used by the Windows binary crimp.exe, is distributed under the conditions stated in LICENSE.getopt.txt.
