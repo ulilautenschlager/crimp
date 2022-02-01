@@ -1102,7 +1102,9 @@ void optimize_RRHC(DATA *Data, int opt_gini, int opt_clumpp, int opt_n_runs, int
 					
 				}
 			}
-			printf("\rrun %d, iteration %d:\t%.6lf", run, iter, best_score_run);
+			if (opt_quiet==0) {
+				printf("\rrun %d, iteration %d:\t%.6lf", run, iter, best_score_run);
+			}
 			iter++;
 			if (improved_iter==0) {
 				memcpy(best_permutations_run, current_permutations, n_clusterings * n_clusters * sizeof(int));
