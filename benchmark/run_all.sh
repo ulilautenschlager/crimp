@@ -1,9 +1,13 @@
 #!/bin/bash
 # Warning: Run this script in a clean directory, otherwise existing files may be deleted!
 
-# Preparing steps: ensure that pong and pophelper are installed and copy crimp binary into this directory
+# Preparing steps: ensure that pong and pophelper are installed
 
 n_replicates=25
+
+# compile Crimp
+make -B -C ..
+cp ../crimp .
 
 # download CLUMPP along with arabid and chicken datasets:
 wget https://rosenberglab.stanford.edu/software/CLUMPP_Linux64.1.1.2.tar.gz
