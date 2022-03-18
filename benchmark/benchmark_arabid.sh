@@ -16,9 +16,9 @@ create_arabid_popfile () {
 evaluate_scores_arabid() {
     infile=$1
     # calculate mean entropy
-    ./crimp -e -n0 -w arabid_weights.txt $infile | awk 'NR==3 {printf "%s\t", $NF}'
+    ./crimp -e -n0 -w arabid_weights.txt $infile | awk '/^initial mean Shannon/ {printf "%s\t", $NF}'
     # calculate mean Gini impurity, H and H'
-    ./crimp -c -n0 -w arabid_weights.txt $infile | awk 'NR==3 {printf "%s\t", $NF} NR==4 {printf "%s\t%s", $5, $8}' | tr -d ","
+    ./crimp -c -n0 -w arabid_weights.txt $infile | awk '/^initial mean Gini/ {printf "%s\t", $NF} /^CLUMPP scores/ {printf "%s\t%s", $5, $8}' | tr -d ","
 }
 
 head -n 95 arabid.popfile | cut -d" " -f5 > arabid_weights.txt
