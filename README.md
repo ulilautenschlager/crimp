@@ -56,7 +56,7 @@ individual_2: 0  1
 individual_3: 1  0
 ```
 
-or like CLUMMP-indfiles:
+or like CLUMPP-indfiles:
 
 ```raw
 1 1 (0) 1 :  1  0
