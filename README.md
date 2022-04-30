@@ -8,7 +8,7 @@ outputs from programs like Structure (Pritchard et al. 2000). Similar to CLUMPP
 same number of clusters (K) and clustered objects (C).
 
 ## Installation
-Download Crimp, e.g. using `git clone https://github.com/ulilautenschlager/crimp`
+Download Crimp, e.g. using `git clone https://github.com/ulilautenschlager/crimp` or from https://github.com/ulilautenschlager/crimp/releases.
 
 - Linux: Either use the precompiled crimp (64 Bit, statically linked 
 against [musl](https://musl.libc.org/)) or compile your own binary with `make` (recommended).
