@@ -8,7 +8,7 @@ outputs from programs like Structure (Pritchard et al. 2000). Similar to CLUMPP
 same number of clusters (K) and clustered objects (C).
 
 ## Installation
-Download Crimp, e.g. using `git clone https://github.com/ulilautenschlager/crimp` or from https://github.com/ulilautenschlager/crimp/releases.
+Download Crimp, e.g. using `git clone https://github.com/ulilautenschlager/crimp` or, for specific versions, from https://github.com/ulilautenschlager/crimp/releases.
 
 - Linux: Either use the precompiled crimp (64 Bit, statically linked 
 against [musl](https://musl.libc.org/)) or compile your own binary with `make` (recommended).
@@ -170,3 +170,7 @@ rearranges the original Q-matrices and writes them to \<input\>.ordered.
 
 Unless otherwise stated, the provided files are distributed under the MIT license (see LICENSE.txt).
 The alternative getopt implementation (src/getopt.c and src/getopt.h), which allows to compile Crimp on non-Unix systems and is used by the Windows binary crimp.exe, is distributed under the conditions stated in LICENSE.getopt.txt.
+
+## Citation
+
+Lautenschlager U. (2022). Crimp: fast and scalable cluster relabeling based on impurity minimization. bioRxiv. https://doi.org/10.1101/2022.03.22.485309
