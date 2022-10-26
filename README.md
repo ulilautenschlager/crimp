@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/454221207.svg)](https://zenodo.org/badge/latestdoi/454221207)
+
 # Crimp
 
 Crimp (cluster relabeling based on impurity minimization) allows to align 
