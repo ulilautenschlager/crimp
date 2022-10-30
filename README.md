@@ -168,6 +168,10 @@ rearranges the original Q-matrices and writes them to \<input\>.ordered.
 
 ```
 
+## Benchmark
+
+To reproduce the benchmark analyses from the publication, please follow the instructions in benchmark/run_all.sh (Linux only).
+
 ## License
 
 Unless otherwise stated, the provided files are distributed under the MIT license (see LICENSE.txt).
