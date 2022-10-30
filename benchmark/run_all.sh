@@ -1,5 +1,6 @@
 #!/bin/bash
-# Warning: Run this script in a clean directory, otherwise existing files may be deleted!
+# Usage: Run this script without arguments inside the benchmark directory.
+# Warning: Existing output files may be deleted!
 
 # Preparing steps: ensure that pong and pophelper are installed
 
