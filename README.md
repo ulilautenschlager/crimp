@@ -179,4 +179,4 @@ The alternative getopt implementation (src/getopt.c and src/getopt.h), which all
 
 ## Citation
 
-Lautenschlager U. (2022). Crimp: fast and scalable cluster relabeling based on impurity minimization. bioRxiv. https://doi.org/10.1101/2022.03.22.485309
+Lautenschlager U. (2022). Crimp: an efficient tool for summarizing multiple clusterings in population structure analysis and beyond. *Molecular Ecology Resources*. https://doi.org/10.1111/1755-0998.13734
