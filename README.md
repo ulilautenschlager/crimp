@@ -179,4 +179,4 @@ The alternative getopt implementation (src/getopt.c and src/getopt.h), which all
 
 ## Citation
 
-Lautenschlager U. (2022). Crimp: an efficient tool for summarizing multiple clusterings in population structure analysis and beyond. *Molecular Ecology Resources*. https://doi.org/10.1111/1755-0998.13734
+Lautenschlager U. (2023). Crimp: an efficient tool for summarizing multiple clusterings in population structure analysis and beyond. *Molecular Ecology Resources*, 23, 705–711. https://doi.org/10.1111/1755-0998.13734
