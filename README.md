@@ -13,7 +13,7 @@ same number of clusters (K) and clustered objects (C).
 Download Crimp, e.g. using `git clone https://github.com/ulilautenschlager/crimp` or, for specific versions, from https://github.com/ulilautenschlager/crimp/releases.
 
 - Linux: Either use the precompiled crimp (64 Bit, statically linked 
-against [musl](https://musl.libc.org/)) or compile your own binary with `make` (recommended).
+against [musl](https://musl.libc.org/)) or compile your own binary by running `make -B` inside the crimp directory (recommended).
 - Windows (64 bit): Please use the precompiled crimp.exe.
 
 ## Usage
